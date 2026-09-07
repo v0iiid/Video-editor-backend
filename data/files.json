@@ -1,0 +1,49 @@
+[
+  {
+    "id": "file_3aca1508-5f8d-4f55-9b62-f61d143c980e",
+    "originalName": "hero.mp4",
+    "filename": "1788761947597_713401fe.mp4",
+    "path": "D:\\pbl\\backend\\uploads\\1788761947597_713401fe.mp4",
+    "mimeType": "video/mp4",
+    "size": 2238141,
+    "duration": 6,
+    "width": 2880,
+    "height": 1178,
+    "fps": 30,
+    "resolution": "2880x1178",
+    "hasAudio": false,
+    "thumbnailPath": "D:\\pbl\\backend\\uploads\\thumb_file_3aca1508-5f8d-4f55-9b62-f61d143c980e.jpg",
+    "createdAt": "2026-09-07T06:19:11.255Z"
+  },
+  {
+    "id": "file_f617d8be-d39d-44d4-bb7f-b7ceeefdf383",
+    "originalName": "Lesson 01.mp4",
+    "filename": "1788761951877_cec24fac.mp4",
+    "path": "D:\\pbl\\backend\\uploads\\1788761951877_cec24fac.mp4",
+    "mimeType": "video/mp4",
+    "size": 84502436,
+    "duration": 1980.245,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "resolution": "1920x1080",
+    "hasAudio": true,
+    "thumbnailPath": "D:\\pbl\\backend\\uploads\\thumb_file_f617d8be-d39d-44d4-bb7f-b7ceeefdf383.jpg",
+    "createdAt": "2026-09-07T06:19:13.939Z"
+  },
+  {
+    "id": "file_85022b10-6ea4-4551-b224-c7bea6149683",
+    "originalName": "money-rainbow-logo-design_474888-2243.avif",
+    "filename": "1788762157341_b8284c14.avif",
+    "path": "D:\\pbl\\backend\\uploads\\1788762157341_b8284c14.avif",
+    "mimeType": "image/avif",
+    "size": 5938,
+    "duration": 5,
+    "width": 740,
+    "height": 740,
+    "fps": 1,
+    "resolution": "740x740",
+    "hasAudio": false,
+    "createdAt": "2026-09-07T06:22:37.794Z"
+  }
+]

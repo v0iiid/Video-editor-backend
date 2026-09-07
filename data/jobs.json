@@ -1,0 +1,567 @@
+[
+  {
+    "id": "job_e667b92b-c21f-4ef9-9b08-6d729e9af749",
+    "timeline": {
+      "name": "Untitled Video Project",
+      "aspectRatio": "16:9",
+      "canvas": {
+        "width": 1280,
+        "height": 720,
+        "fps": 30
+      },
+      "tracks": [
+        {
+          "id": "track_v1",
+          "type": "video",
+          "name": "Video Track 1",
+          "muted": false,
+          "clips": [
+            {
+              "id": "clip_1788762055757",
+              "fileId": "file_3aca1508-5f8d-4f55-9b62-f61d143c980e",
+              "name": "hero.mp4",
+              "type": "video",
+              "start": 1.0333333333333334,
+              "duration": 6,
+              "trimIn": 0,
+              "trimOut": 6,
+              "volume": 1,
+              "speed": 1,
+              "filter": "grayscale"
+            }
+          ]
+        },
+        {
+          "id": "track_a1",
+          "type": "audio",
+          "name": "Audio Track 1",
+          "muted": false,
+          "clips": [
+            {
+              "id": "clip_1788762158866",
+              "fileId": "file_85022b10-6ea4-4551-b224-c7bea6149683",
+              "name": "money-rainbow-logo-design_474888-2243.avif",
+              "type": "audio",
+              "start": 2.96673333333371,
+              "duration": 5,
+              "trimIn": 0,
+              "trimOut": 5,
+              "volume": 1,
+              "speed": 1,
+              "filter": "none"
+            },
+            {
+              "id": "clip_1788762158866",
+              "fileId": "file_85022b10-6ea4-4551-b224-c7bea6149683",
+              "name": "money-rainbow-logo-design_474888-2243.avif",
+              "type": "audio",
+              "start": 2.96673333333371,
+              "duration": 5,
+              "trimIn": 0,
+              "trimOut": 5,
+              "volume": 1,
+              "speed": 1,
+              "filter": "none"
+            }
+          ]
+        }
+      ],
+      "textOverlays": [
+        {
+          "id": "text_1788762098746",
+          "text": "Random Kid work ",
+          "start": 1.4666666666666666,
+          "end": 4.466666666666667,
+          "x": 50,
+          "y": 77,
+          "fontSize": 42,
+          "fontColor": "#e86969",
+          "backgroundColor": "#00000080",
+          "fontFamily": "sans-serif"
+        }
+      ],
+      "transitions": []
+    },
+    "status": "failed",
+    "progress": 5,
+    "createdAt": "2026-09-07T06:22:53.826Z",
+    "error": "FFmpeg processing failed: ffmpeg exited with code 4294967274: Error binding filtergraph inputs/outputs: Invalid argument\n"
+  },
+  {
+    "id": "job_814c0945-dda0-4f0c-85ef-9ad9ac5cc595",
+    "timeline": {
+      "name": "Untitled Video Project",
+      "aspectRatio": "16:9",
+      "canvas": {
+        "width": 1280,
+        "height": 720,
+        "fps": 30
+      },
+      "tracks": [
+        {
+          "id": "track_v1",
+          "type": "video",
+          "name": "Video Track 1",
+          "muted": false,
+          "clips": [
+            {
+              "id": "clip_1788762055757",
+              "fileId": "file_3aca1508-5f8d-4f55-9b62-f61d143c980e",
+              "name": "hero.mp4",
+              "type": "video",
+              "start": 1.0333333333333334,
+              "duration": 6,
+              "trimIn": 0,
+              "trimOut": 6,
+              "volume": 1,
+              "speed": 1,
+              "filter": "grayscale"
+            }
+          ]
+        },
+        {
+          "id": "track_a1",
+          "type": "audio",
+          "name": "Audio Track 1",
+          "muted": false,
+          "clips": [
+            {
+              "id": "clip_1788762158866",
+              "fileId": "file_85022b10-6ea4-4551-b224-c7bea6149683",
+              "name": "money-rainbow-logo-design_474888-2243.avif",
+              "type": "audio",
+              "start": 2.96673333333371,
+              "duration": 5,
+              "trimIn": 0,
+              "trimOut": 5,
+              "volume": 1,
+              "speed": 1,
+              "filter": "none"
+            },
+            {
+              "id": "clip_1788762158866",
+              "fileId": "file_85022b10-6ea4-4551-b224-c7bea6149683",
+              "name": "money-rainbow-logo-design_474888-2243.avif",
+              "type": "audio",
+              "start": 2.96673333333371,
+              "duration": 5,
+              "trimIn": 0,
+              "trimOut": 5,
+              "volume": 1,
+              "speed": 1,
+              "filter": "none"
+            }
+          ]
+        }
+      ],
+      "textOverlays": [
+        {
+          "id": "text_1788762098746",
+          "text": "Random Kid work ",
+          "start": 1.4666666666666666,
+          "end": 4.466666666666667,
+          "x": 50,
+          "y": 77,
+          "fontSize": 42,
+          "fontColor": "#e86969",
+          "backgroundColor": "#00000080",
+          "fontFamily": "sans-serif"
+        }
+      ],
+      "transitions": []
+    },
+    "status": "failed",
+    "progress": 5,
+    "createdAt": "2026-09-07T06:23:02.944Z",
+    "error": "FFmpeg processing failed: ffmpeg exited with code 4294967274: Error binding filtergraph inputs/outputs: Invalid argument\n"
+  },
+  {
+    "id": "job_7e85ad50-2a34-4ef6-b8ac-1e26a73cfc90",
+    "timeline": {
+      "name": "Untitled Video Project",
+      "aspectRatio": "16:9",
+      "canvas": {
+        "width": 1280,
+        "height": 720,
+        "fps": 30
+      },
+      "tracks": [
+        {
+          "id": "track_v1",
+          "type": "video",
+          "name": "Video Track 1",
+          "muted": false,
+          "clips": [
+            {
+              "id": "clip_1788762055757",
+              "fileId": "file_3aca1508-5f8d-4f55-9b62-f61d143c980e",
+              "name": "hero.mp4",
+              "type": "video",
+              "start": 1.0333333333333334,
+              "duration": 6,
+              "trimIn": 0,
+              "trimOut": 6,
+              "volume": 1,
+              "speed": 1,
+              "filter": "grayscale"
+            },
+            {
+              "id": "clip_1788762261267",
+              "fileId": "file_3aca1508-5f8d-4f55-9b62-f61d143c980e",
+              "name": "hero.mp4",
+              "type": "video",
+              "start": 0.03333333333333333,
+              "duration": 6,
+              "trimIn": 0,
+              "trimOut": 6,
+              "volume": 1,
+              "speed": 1,
+              "filter": "sepia"
+            },
+            {
+              "id": "clip_1788762261267",
+              "fileId": "file_3aca1508-5f8d-4f55-9b62-f61d143c980e",
+              "name": "hero.mp4",
+              "type": "video",
+              "start": 0.03333333333333333,
+              "duration": 6,
+              "trimIn": 0,
+              "trimOut": 6,
+              "volume": 1,
+              "speed": 1,
+              "filter": "sepia"
+            }
+          ]
+        },
+        {
+          "id": "track_a1",
+          "type": "audio",
+          "name": "Audio Track 1",
+          "muted": false,
+          "clips": [
+            {
+              "id": "clip_1788762158866",
+              "fileId": "file_85022b10-6ea4-4551-b224-c7bea6149683",
+              "name": "money-rainbow-logo-design_474888-2243.avif",
+              "type": "audio",
+              "start": 2.96673333333371,
+              "duration": 5,
+              "trimIn": 0,
+              "trimOut": 5,
+              "volume": 1,
+              "speed": 1,
+              "filter": "none"
+            },
+            {
+              "id": "clip_1788762158866",
+              "fileId": "file_85022b10-6ea4-4551-b224-c7bea6149683",
+              "name": "money-rainbow-logo-design_474888-2243.avif",
+              "type": "audio",
+              "start": 2.96673333333371,
+              "duration": 5,
+              "trimIn": 0,
+              "trimOut": 5,
+              "volume": 1,
+              "speed": 1,
+              "filter": "none"
+            }
+          ]
+        }
+      ],
+      "textOverlays": [
+        {
+          "id": "text_1788762098746",
+          "text": "Random Kid work ",
+          "start": 1.4666666666666666,
+          "end": 4.466666666666667,
+          "x": 50,
+          "y": 77,
+          "fontSize": 42,
+          "fontColor": "#e86969",
+          "backgroundColor": "#00000080",
+          "fontFamily": "sans-serif"
+        }
+      ],
+      "transitions": []
+    },
+    "status": "failed",
+    "progress": 5,
+    "createdAt": "2026-09-07T06:24:29.781Z",
+    "error": "FFmpeg processing failed: ffmpeg exited with code 4294967274: Failed to set value '[0:v]trim=start=0:end=6,setpts=PTS-STARTPTS,scale=1280:720:force_original_aspect_ratio=decrease,pad=1280:720:(ow-iw)/2:(oh-ih)/2,fps=30,format=yuv420p,colorchannelscaler=0.393:0.769:0.189:0:0.349:0.686:0.168:0:0.272:0.534:0.131:0[vclip_0];[1:v]trim=start=0:end=6,setpts=PTS-STARTPTS,scale=1280:720:force_original_aspect_ratio=decrease,pad=1280:720:(ow-iw)/2:(oh-ih)/2,fps=30,format=yuv420p,colorchannelscaler=0.393:0.769:0.189:0:0.349:0.686:0.168:0:0.272:0.534:0.131:0[vclip_1];[2:v]trim=start=0:end=6,setpts=PTS-STARTPTS,scale=1280:720:force_original_aspect_ratio=decrease,pad=1280:720:(ow-iw)/2:(oh-ih)/2,fps=30,format=yuv420p,hue=s=0[vclip_2];[3:a]atrim=start=0:end=5,asetpts=PTS-STARTPTS[bgaudio_0];[4:a]atrim=start=0:end=5,asetpts=PTS-STARTPTS[bgaudio_1];[vclip_0][vclip_1][vclip_2]concat=n=3:v=1:a=0[v_concat];[v_concat]drawtext=text='Random Kid work ':x=640:y=554:fontsize=42:fontcolor=#e86969:enable='between(t,1.4666666666666666,4.466666666666667)':box=1:boxcolor=#00000080@0.6:boxborderw=10[v_text_0];[bgaudio_0][bgaudio_1]amix=inputs=2:duration=longest[a_mixed]' for option 'filter_complex': Invalid argument\nError parsing global options: Invalid argument\n"
+  },
+  {
+    "id": "job_c018679e-fc97-4044-b17f-c87bfe09b3e3",
+    "timeline": {
+      "name": "Untitled Video Project",
+      "aspectRatio": "16:9",
+      "canvas": {
+        "width": 854,
+        "height": 480,
+        "fps": 30
+      },
+      "tracks": [
+        {
+          "id": "track_v1",
+          "type": "video",
+          "name": "Video Track 1",
+          "muted": false,
+          "clips": [
+            {
+              "id": "clip_1788762055757",
+              "fileId": "file_3aca1508-5f8d-4f55-9b62-f61d143c980e",
+              "name": "hero.mp4",
+              "type": "video",
+              "start": 1.0333333333333334,
+              "duration": 6,
+              "trimIn": 0,
+              "trimOut": 6,
+              "volume": 1,
+              "speed": 1,
+              "filter": "grayscale"
+            },
+            {
+              "id": "clip_1788762261267",
+              "fileId": "file_3aca1508-5f8d-4f55-9b62-f61d143c980e",
+              "name": "hero.mp4",
+              "type": "video",
+              "start": 0.03333333333333333,
+              "duration": 6,
+              "trimIn": 0,
+              "trimOut": 6,
+              "volume": 1,
+              "speed": 1,
+              "filter": "sepia"
+            },
+            {
+              "id": "clip_1788762261267",
+              "fileId": "file_3aca1508-5f8d-4f55-9b62-f61d143c980e",
+              "name": "hero.mp4",
+              "type": "video",
+              "start": 0.03333333333333333,
+              "duration": 6,
+              "trimIn": 0,
+              "trimOut": 6,
+              "volume": 1,
+              "speed": 1,
+              "filter": "sepia"
+            }
+          ]
+        },
+        {
+          "id": "track_a1",
+          "type": "audio",
+          "name": "Audio Track 1",
+          "muted": false,
+          "clips": [
+            {
+              "id": "clip_1788762158866",
+              "fileId": "file_85022b10-6ea4-4551-b224-c7bea6149683",
+              "name": "money-rainbow-logo-design_474888-2243.avif",
+              "type": "audio",
+              "start": 2.96673333333371,
+              "duration": 5,
+              "trimIn": 0,
+              "trimOut": 5,
+              "volume": 1,
+              "speed": 1,
+              "filter": "none"
+            },
+            {
+              "id": "clip_1788762158866",
+              "fileId": "file_85022b10-6ea4-4551-b224-c7bea6149683",
+              "name": "money-rainbow-logo-design_474888-2243.avif",
+              "type": "audio",
+              "start": 2.96673333333371,
+              "duration": 5,
+              "trimIn": 0,
+              "trimOut": 5,
+              "volume": 1,
+              "speed": 1,
+              "filter": "none"
+            }
+          ]
+        }
+      ],
+      "textOverlays": [
+        {
+          "id": "text_1788762098746",
+          "text": "Random Kid work ",
+          "start": 1.4666666666666666,
+          "end": 4.466666666666667,
+          "x": 50,
+          "y": 77,
+          "fontSize": 42,
+          "fontColor": "#e86969",
+          "backgroundColor": "#00000080",
+          "fontFamily": "sans-serif"
+        }
+      ],
+      "transitions": []
+    },
+    "status": "failed",
+    "progress": 5,
+    "createdAt": "2026-09-07T06:24:37.541Z",
+    "error": "FFmpeg processing failed: ffmpeg exited with code 4294967274: Failed to set value '[0:v]trim=start=0:end=6,setpts=PTS-STARTPTS,scale=854:480:force_original_aspect_ratio=decrease,pad=854:480:(ow-iw)/2:(oh-ih)/2,fps=30,format=yuv420p,colorchannelscaler=0.393:0.769:0.189:0:0.349:0.686:0.168:0:0.272:0.534:0.131:0[vclip_0];[1:v]trim=start=0:end=6,setpts=PTS-STARTPTS,scale=854:480:force_original_aspect_ratio=decrease,pad=854:480:(ow-iw)/2:(oh-ih)/2,fps=30,format=yuv420p,colorchannelscaler=0.393:0.769:0.189:0:0.349:0.686:0.168:0:0.272:0.534:0.131:0[vclip_1];[2:v]trim=start=0:end=6,setpts=PTS-STARTPTS,scale=854:480:force_original_aspect_ratio=decrease,pad=854:480:(ow-iw)/2:(oh-ih)/2,fps=30,format=yuv420p,hue=s=0[vclip_2];[3:a]atrim=start=0:end=5,asetpts=PTS-STARTPTS[bgaudio_0];[4:a]atrim=start=0:end=5,asetpts=PTS-STARTPTS[bgaudio_1];[vclip_0][vclip_1][vclip_2]concat=n=3:v=1:a=0[v_concat];[v_concat]drawtext=text='Random Kid work ':x=427:y=370:fontsize=42:fontcolor=#e86969:enable='between(t,1.4666666666666666,4.466666666666667)':box=1:boxcolor=#00000080@0.6:boxborderw=10[v_text_0];[bgaudio_0][bgaudio_1]amix=inputs=2:duration=longest[a_mixed]' for option 'filter_complex': Invalid argument\nError parsing global options: Invalid argument\n"
+  },
+  {
+    "id": "job_3aac64a4-c4a6-4b8f-b1c6-70261228c5e2",
+    "timeline": {
+      "name": "Untitled Video Project",
+      "aspectRatio": "16:9",
+      "canvas": {
+        "width": 1920,
+        "height": 1080,
+        "fps": 30
+      },
+      "tracks": [
+        {
+          "id": "track_v1",
+          "type": "video",
+          "name": "Video Track 1",
+          "muted": false,
+          "clips": [
+            {
+              "id": "clip_1788762339698",
+              "fileId": "file_3aca1508-5f8d-4f55-9b62-f61d143c980e",
+              "name": "hero.mp4",
+              "type": "video",
+              "start": 0,
+              "duration": 6,
+              "trimIn": 0,
+              "trimOut": 6,
+              "volume": 1,
+              "speed": 1,
+              "filter": "none"
+            },
+            {
+              "id": "clip_1788762339698",
+              "fileId": "file_3aca1508-5f8d-4f55-9b62-f61d143c980e",
+              "name": "hero.mp4",
+              "type": "video",
+              "start": 0,
+              "duration": 6,
+              "trimIn": 0,
+              "trimOut": 6,
+              "volume": 1,
+              "speed": 1,
+              "filter": "none"
+            },
+            {
+              "id": "clip_1788762348360",
+              "fileId": "file_3aca1508-5f8d-4f55-9b62-f61d143c980e",
+              "name": "hero.mp4",
+              "type": "video",
+              "start": 5.8,
+              "duration": 6,
+              "trimIn": 0,
+              "trimOut": 6,
+              "volume": 1,
+              "speed": 1,
+              "filter": "none"
+            },
+            {
+              "id": "clip_1788762354168",
+              "fileId": "file_85022b10-6ea4-4551-b224-c7bea6149683",
+              "name": "money-rainbow-logo-design_474888-2243.avif",
+              "type": "video",
+              "start": 11.8,
+              "duration": 5,
+              "trimIn": 0,
+              "trimOut": 5,
+              "volume": 1,
+              "speed": 1,
+              "filter": "none"
+            }
+          ]
+        },
+        {
+          "id": "track_a1",
+          "type": "audio",
+          "name": "Audio Track 1",
+          "muted": false,
+          "clips": []
+        }
+      ],
+      "textOverlays": [],
+      "transitions": []
+    },
+    "status": "failed",
+    "progress": 5,
+    "createdAt": "2026-09-07T06:26:42.145Z",
+    "error": "FFmpeg processing failed: ffmpeg exited with code 2880417800: Option loop not found.\nError opening input file D:\\pbl\\backend\\uploads\\1788762157341_b8284c14.avif.\nError opening input files: Option not found\n"
+  },
+  {
+    "id": "job_fe152e7b-0822-44c6-a000-5c1567b803f4",
+    "timeline": {
+      "name": "Untitled Video Project",
+      "aspectRatio": "16:9",
+      "canvas": {
+        "width": 1920,
+        "height": 1080,
+        "fps": 30
+      },
+      "tracks": [
+        {
+          "id": "track_v1",
+          "type": "video",
+          "name": "Video Track 1",
+          "muted": false,
+          "clips": [
+            {
+              "id": "clip_1788762422371",
+              "fileId": "file_3aca1508-5f8d-4f55-9b62-f61d143c980e",
+              "name": "hero.mp4",
+              "type": "video",
+              "start": 0,
+              "duration": 6,
+              "trimIn": 0,
+              "trimOut": 6,
+              "volume": 1,
+              "speed": 1,
+              "filter": "none"
+            },
+            {
+              "id": "clip_1788762424388",
+              "fileId": "file_85022b10-6ea4-4551-b224-c7bea6149683",
+              "name": "money-rainbow-logo-design_474888-2243.avif",
+              "type": "video",
+              "start": 0,
+              "duration": 5,
+              "trimIn": 0,
+              "trimOut": 5,
+              "volume": 1,
+              "speed": 1,
+              "filter": "none"
+            },
+            {
+              "id": "clip_1788762424388",
+              "fileId": "file_85022b10-6ea4-4551-b224-c7bea6149683",
+              "name": "money-rainbow-logo-design_474888-2243.avif",
+              "type": "video",
+              "start": 0,
+              "duration": 5,
+              "trimIn": 0,
+              "trimOut": 5,
+              "volume": 1,
+              "speed": 1,
+              "filter": "none"
+            }
+          ]
+        },
+        {
+          "id": "track_a1",
+          "type": "audio",
+          "name": "Audio Track 1",
+          "muted": false,
+          "clips": []
+        }
+      ],
+      "textOverlays": [],
+      "transitions": []
+    },
+    "status": "failed",
+    "progress": 5,
+    "createdAt": "2026-09-07T06:27:07.131Z",
+    "error": "FFmpeg rendering failed: ffmpeg exited with code 2880417800: Option loop not found.\nError opening input file D:\\pbl\\backend\\uploads\\1788762157341_b8284c14.avif.\nError opening input files: Option not found\n"
+  }
+]
