@@ -62,8 +62,7 @@ export const ffmpegService = {
 
   /**
    * Complex Timeline Renderer: Base Canvas Overlay Engine
-   * Renders clips at their exact timeline timestamps (clip.start), handles gaps, image inputs,
-   * video filters, text overlays, and audio delay mixing.
+   * Uses loop=loop=-1:size=1:start=0 filter for universal image support (AVIF, PNG, JPG, WEBP)
    */
   renderTimeline(
     timeline: TimelineSchema,
@@ -95,7 +94,6 @@ export const ffmpegService = {
           return reject(new Error('No video or image clips present in timeline to render'));
         }
 
-        // Calculate total render duration
         const maxVideoEnd = Math.max(5, ...videoClips.map(c => c.start + (c.duration || 5)));
         const maxAudioEnd = audioClips.length > 0 ? Math.max(...audioClips.map(c => c.start + (c.duration || 5))) : 0;
         const maxTextEnd = textOverlays.length > 0 ? Math.max(...textOverlays.map(t => t.end)) : 0;
@@ -104,7 +102,7 @@ export const ffmpegService = {
         const cmd = ffmpeg();
         const complexFilter: string[] = [];
 
-        // 1. Create Base Black Background Stream
+        // 1. Base Canvas Background Stream
         complexFilter.push(
           `color=c=black:s=${targetWidth}x${targetHeight}:r=${targetFps}:d=${totalDuration.toFixed(2)}[bg_base]`
         );
@@ -113,40 +111,35 @@ export const ffmpegService = {
         let lastCanvasOut = 'bg_base';
         const audioStreamLabels: string[] = [];
 
-        // 2. Process & Overlay Video / Image Clips
+        // 2. Process Video & Image Clips
         videoClips.forEach((clip, idx) => {
           const fileMeta = getFileById(clip.fileId);
           if (!fileMeta || !fs.existsSync(fileMeta.path)) {
             throw new Error(`Media file not found for clip "${clip.name}" (fileId: ${clip.fileId})`);
           }
 
-          const isImage = fileMeta.mimeType.startsWith('image/');
+          const isImage = fileMeta.mimeType.startsWith('image/') || fileMeta.originalName.match(/\.(avif|webp|png|jpg|jpeg|gif)$/i);
           const trimIn = clip.trimIn || 0;
           const durationSec = Math.max(0.2, clip.duration || 5);
           const trimOut = clip.trimOut || (trimIn + durationSec);
           const speed = clip.speed || 1.0;
           const filterType = clip.filter || 'none';
 
-          if (isImage) {
-            cmd.input(fileMeta.path).inputOptions(['-loop 1', `-t ${durationSec}`]);
-          } else {
-            cmd.input(fileMeta.path);
-          }
-
+          cmd.input(fileMeta.path);
           const currentInput = inputIndex++;
           let vPrep = '';
 
           if (isImage) {
-            vPrep = `[${currentInput}:v]scale=${targetWidth}:${targetHeight}:force_original_aspect_ratio=decrease,pad=${targetWidth}:${targetHeight}:(ow-iw)/2:(oh-ih)/2,fps=${targetFps},format=yuv420p`;
+            // Universal Image Loop Filter
+            vPrep = `[${currentInput}:v]loop=loop=-1:size=1:start=0,trim=duration=${durationSec.toFixed(2)},setpts=PTS-STARTPTS,scale=${targetWidth}:${targetHeight}:force_original_aspect_ratio=decrease,pad=${targetWidth}:${targetHeight}:(ow-iw)/2:(oh-ih)/2,fps=${targetFps},format=yuv420p`;
           } else {
-            vPrep = `[${currentInput}:v]trim=start=${trimIn}:end=${trimOut},setpts=PTS-STARTPTS`;
+            vPrep = `[${currentInput}:v]trim=start=${trimIn.toFixed(2)}:end=${trimOut.toFixed(2)},setpts=PTS-STARTPTS`;
             if (speed !== 1.0) {
               vPrep += `,setpts=${(1 / speed).toFixed(4)}*PTS`;
             }
             vPrep += `,scale=${targetWidth}:${targetHeight}:force_original_aspect_ratio=decrease,pad=${targetWidth}:${targetHeight}:(ow-iw)/2:(oh-ih)/2,fps=${targetFps},format=yuv420p`;
           }
 
-          // Apply visual filters
           if (filterType === 'grayscale') {
             vPrep += `,hue=s=0`;
           } else if (filterType === 'sepia') {
@@ -162,7 +155,6 @@ export const ffmpegService = {
           const clipPrepLabel = `vprep_${idx}`;
           complexFilter.push(`${vPrep}[${clipPrepLabel}]`);
 
-          // Overlay onto base canvas at clip.start timestamp
           const nextCanvasOut = `canvas_${idx}`;
           const startTimeSec = clip.start || 0;
           const endTimeSec = startTimeSec + durationSec;
@@ -172,10 +164,10 @@ export const ffmpegService = {
           );
           lastCanvasOut = nextCanvasOut;
 
-          // Video Audio Stream (if video has audio)
+          // Video Audio Stream
           if (!isImage && fileMeta.hasAudio) {
             const delayMs = Math.round(startTimeSec * 1000);
-            let aPrep = `[${currentInput}:a]atrim=start=${trimIn}:end=${trimOut},asetpts=PTS-STARTPTS`;
+            let aPrep = `[${currentInput}:a]atrim=start=${trimIn.toFixed(2)}:end=${trimOut.toFixed(2)},asetpts=PTS-STARTPTS`;
             if (speed !== 1.0 && speed >= 0.5 && speed <= 2.0) {
               aPrep += `,atempo=${speed}`;
             }
@@ -192,7 +184,7 @@ export const ffmpegService = {
           }
         });
 
-        // 3. Process Dedicated Audio Tracks (Background Music)
+        // 3. Dedicated Audio Clips
         audioClips.forEach((aclip, idx) => {
           const fileMeta = getFileById(aclip.fileId);
           if (fileMeta && fs.existsSync(fileMeta.path)) {
@@ -203,7 +195,7 @@ export const ffmpegService = {
             const trimOut = aclip.trimOut || (trimIn + durationSec);
             const delayMs = Math.round((aclip.start || 0) * 1000);
 
-            let aPrep = `[${currentInput}:a]atrim=start=${trimIn}:end=${trimOut},asetpts=PTS-STARTPTS`;
+            let aPrep = `[${currentInput}:a]atrim=start=${trimIn.toFixed(2)}:end=${trimOut.toFixed(2)},asetpts=PTS-STARTPTS`;
             if (delayMs > 0) {
               aPrep += `,adelay=${delayMs}|${delayMs}`;
             }
@@ -217,7 +209,7 @@ export const ffmpegService = {
           }
         });
 
-        // 4. Apply Text Overlays (`drawtext`)
+        // 4. Text Overlays
         let currentVideoOut = lastCanvasOut;
         if (textOverlays && textOverlays.length > 0) {
           textOverlays.forEach((overlay, idx) => {
@@ -236,7 +228,7 @@ export const ffmpegService = {
             const endTime = overlay.end || 10;
 
             let drawtextStr = `drawtext=text='${escapedText}':x=${posX}:y=${posY}:fontsize=${fontSize}:fontcolor=${fontColor}`;
-            drawtextStr += `:enable='between(t,${startTime},${endTime})'`;
+            drawtextStr += `:enable='between(t,${startTime.toFixed(2)},${endTime.toFixed(2)})'`;
 
             if (overlay.backgroundColor) {
               drawtextStr += `:box=1:boxcolor=${overlay.backgroundColor}@0.6:boxborderw=10`;
@@ -249,7 +241,7 @@ export const ffmpegService = {
 
         const finalVideoLabel = currentVideoOut;
 
-        // 5. Mix Audio Streams
+        // 5. Audio Mixing
         let finalAudioLabel: string | null = null;
         if (audioStreamLabels.length > 0) {
           if (audioStreamLabels.length === 1) {
@@ -263,7 +255,6 @@ export const ffmpegService = {
 
         cmd.complexFilter(complexFilter);
 
-        // Map final output streams
         cmd.map(`[${finalVideoLabel}]`);
         if (finalAudioLabel) {
           cmd.map(`[${finalAudioLabel}]`);

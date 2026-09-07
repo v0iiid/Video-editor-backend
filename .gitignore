@@ -1,48 +1,28 @@
-# dependencies
+# Dependencies
 node_modules/
-.pnp
-.pnp.js
 
-# next.js
-.next/
-out/
-
-# production
-build/
+# Compiled TypeScript output
 dist/
 
-# env files
+# Temporary upload and export directories
+uploads/*
+!uploads/.gitkeep
+exports/*
+!exports/.gitkeep
+
+# Local database storage
+data/*
+!data/.gitkeep
+
+# Environment variables
 .env
 .env.local
-.env.development.local
-.env.test.local
-.env.production.local
+.env.*.local
 
-# debug
+# System & log files
+*.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-
-# vercel
-.vercel
-
-# typescript
-*.tsbuildinfo
-next-env.d.ts
-
-# os
 .DS_Store
 Thumbs.db
-
-# ide
-.vscode/
-.idea/
-*.swp
-*.swo
-
-# testing
-coverage/
-
-# misc
-*.pem
-.cache/
