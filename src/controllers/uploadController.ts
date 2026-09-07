@@ -67,7 +67,7 @@ export const uploadController = {
         createdAt: new Date().toISOString()
       };
 
-      dbService.saveMediaFile(mediaRecord);
+      await dbService.saveMediaFile(mediaRecord);
 
       return res.status(201).json({
         message: 'File uploaded successfully',
@@ -83,8 +83,8 @@ export const uploadController = {
     }
   },
 
-  getAllUploads(req: Request, res: Response) {
-    const files = dbService.getAllMediaFiles();
+  async getAllUploads(req: Request, res: Response) {
+    const files = await dbService.getAllMediaFiles();
     const result = files.map(f => ({
       ...f,
       thumbnailUrl: `/api/thumbnail/${f.id}`,
@@ -93,9 +93,9 @@ export const uploadController = {
     return res.json({ files: result });
   },
 
-  getThumbnail(req: Request, res: Response) {
+  async getThumbnail(req: Request, res: Response) {
     const fileId = req.params.fileId;
-    const fileRecord = dbService.getMediaFile(fileId);
+    const fileRecord = await dbService.getMediaFile(fileId);
 
     if (!fileRecord) {
       return res.status(404).json({ error: 'File not found' });
@@ -112,9 +112,9 @@ export const uploadController = {
     return res.status(404).json({ error: 'Thumbnail not available' });
   },
 
-  getUploadedFile(req: Request, res: Response) {
+  async getUploadedFile(req: Request, res: Response) {
     const fileId = req.params.fileId;
-    const fileRecord = dbService.getMediaFile(fileId);
+    const fileRecord = await dbService.getMediaFile(fileId);
 
     if (!fileRecord || !fs.existsSync(fileRecord.path)) {
       return res.status(404).json({ error: 'File not found on server' });

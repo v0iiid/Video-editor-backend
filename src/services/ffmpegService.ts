@@ -62,7 +62,7 @@ export const ffmpegService = {
 
   /**
    * Complex Timeline Renderer: Base Canvas Overlay Engine
-   * Uses loop=loop=-1:size=1:start=0 filter for universal image support (AVIF, PNG, JPG, WEBP)
+   * Handles split clips, magnetic alignment, image loops, and audio delay mixing.
    */
   renderTimeline(
     timeline: TimelineSchema,
@@ -82,6 +82,7 @@ export const ffmpegService = {
 
         const videoClips: Clip[] = [];
         videoTracks.forEach(vt => {
+          // Process clips in sequence
           vt.clips.forEach(c => videoClips.push(c));
         });
 
@@ -102,7 +103,7 @@ export const ffmpegService = {
         const cmd = ffmpeg();
         const complexFilter: string[] = [];
 
-        // 1. Base Canvas Background Stream
+        // Base Canvas Background Stream
         complexFilter.push(
           `color=c=black:s=${targetWidth}x${targetHeight}:r=${targetFps}:d=${totalDuration.toFixed(2)}[bg_base]`
         );
@@ -111,7 +112,7 @@ export const ffmpegService = {
         let lastCanvasOut = 'bg_base';
         const audioStreamLabels: string[] = [];
 
-        // 2. Process Video & Image Clips
+        // Process Video & Image Clips
         videoClips.forEach((clip, idx) => {
           const fileMeta = getFileById(clip.fileId);
           if (!fileMeta || !fs.existsSync(fileMeta.path)) {
@@ -120,8 +121,8 @@ export const ffmpegService = {
 
           const isImage = fileMeta.mimeType.startsWith('image/') || fileMeta.originalName.match(/\.(avif|webp|png|jpg|jpeg|gif)$/i);
           const trimIn = clip.trimIn || 0;
-          const durationSec = Math.max(0.2, clip.duration || 5);
-          const trimOut = clip.trimOut || (trimIn + durationSec);
+          const durationSec = Math.max(0.1, clip.duration || 5);
+          const trimOut = trimIn + durationSec; // Synchronized exact trim out point!
           const speed = clip.speed || 1.0;
           const filterType = clip.filter || 'none';
 
@@ -130,7 +131,6 @@ export const ffmpegService = {
           let vPrep = '';
 
           if (isImage) {
-            // Universal Image Loop Filter
             vPrep = `[${currentInput}:v]loop=loop=-1:size=1:start=0,trim=duration=${durationSec.toFixed(2)},setpts=PTS-STARTPTS,scale=${targetWidth}:${targetHeight}:force_original_aspect_ratio=decrease,pad=${targetWidth}:${targetHeight}:(ow-iw)/2:(oh-ih)/2,fps=${targetFps},format=yuv420p`;
           } else {
             vPrep = `[${currentInput}:v]trim=start=${trimIn.toFixed(2)}:end=${trimOut.toFixed(2)},setpts=PTS-STARTPTS`;
@@ -184,7 +184,7 @@ export const ffmpegService = {
           }
         });
 
-        // 3. Dedicated Audio Clips
+        // Dedicated Audio Clips
         audioClips.forEach((aclip, idx) => {
           const fileMeta = getFileById(aclip.fileId);
           if (fileMeta && fs.existsSync(fileMeta.path)) {
@@ -192,7 +192,7 @@ export const ffmpegService = {
             const currentInput = inputIndex++;
             const trimIn = aclip.trimIn || 0;
             const durationSec = aclip.duration || 5;
-            const trimOut = aclip.trimOut || (trimIn + durationSec);
+            const trimOut = trimIn + durationSec;
             const delayMs = Math.round((aclip.start || 0) * 1000);
 
             let aPrep = `[${currentInput}:a]atrim=start=${trimIn.toFixed(2)}:end=${trimOut.toFixed(2)},asetpts=PTS-STARTPTS`;
@@ -209,7 +209,7 @@ export const ffmpegService = {
           }
         });
 
-        // 4. Text Overlays
+        // Text Overlays
         let currentVideoOut = lastCanvasOut;
         if (textOverlays && textOverlays.length > 0) {
           textOverlays.forEach((overlay, idx) => {
@@ -241,7 +241,7 @@ export const ffmpegService = {
 
         const finalVideoLabel = currentVideoOut;
 
-        // 5. Audio Mixing
+        // Audio Mixing
         let finalAudioLabel: string | null = null;
         if (audioStreamLabels.length > 0) {
           if (audioStreamLabels.length === 1) {

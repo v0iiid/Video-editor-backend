@@ -563,5 +563,407 @@
     "progress": 5,
     "createdAt": "2026-09-07T06:27:07.131Z",
     "error": "FFmpeg rendering failed: ffmpeg exited with code 2880417800: Option loop not found.\nError opening input file D:\\pbl\\backend\\uploads\\1788762157341_b8284c14.avif.\nError opening input files: Option not found\n"
+  },
+  {
+    "id": "job_aff69a22-d4e6-4a28-a12f-3a1c8e26aade",
+    "timeline": {
+      "name": "Untitled Video Project",
+      "aspectRatio": "16:9",
+      "canvas": {
+        "width": 1920,
+        "height": 1080,
+        "fps": 30
+      },
+      "tracks": [
+        {
+          "id": "track_v1",
+          "type": "video",
+          "name": "Video Track 1",
+          "muted": false,
+          "clips": [
+            {
+              "id": "clip_1788763222270",
+              "fileId": "file_3aca1508-5f8d-4f55-9b62-f61d143c980e",
+              "name": "hero.mp4",
+              "type": "video",
+              "start": 0,
+              "duration": 3.1,
+              "trimIn": 0,
+              "trimOut": 3.1,
+              "volume": 1,
+              "speed": 1,
+              "filter": "grayscale"
+            },
+            {
+              "id": "clip_1788763233762",
+              "fileId": "file_85022b10-6ea4-4551-b224-c7bea6149683",
+              "name": "money-rainbow-logo-design_474888-2243.avif",
+              "type": "video",
+              "start": 3.1,
+              "duration": 5,
+              "trimIn": 0,
+              "trimOut": 5,
+              "volume": 1,
+              "speed": 1,
+              "filter": "none"
+            },
+            {
+              "id": "clip_1788763233762",
+              "fileId": "file_85022b10-6ea4-4551-b224-c7bea6149683",
+              "name": "money-rainbow-logo-design_474888-2243.avif",
+              "type": "video",
+              "start": 3.1,
+              "duration": 5,
+              "trimIn": 0,
+              "trimOut": 5,
+              "volume": 1,
+              "speed": 1,
+              "filter": "none"
+            }
+          ]
+        },
+        {
+          "id": "track_a1",
+          "type": "audio",
+          "name": "Audio Track 1",
+          "muted": false,
+          "clips": []
+        }
+      ],
+      "textOverlays": [],
+      "transitions": []
+    },
+    "status": "completed",
+    "progress": 100,
+    "createdAt": "2026-09-07T06:41:02.586Z",
+    "outputPath": "D:\\pbl\\backend\\exports\\export_job_aff69a22-d4e6-4a28-a12f-3a1c8e26aade.mp4",
+    "downloadUrl": "/api/export/job_aff69a22-d4e6-4a28-a12f-3a1c8e26aade/download",
+    "completedAt": "2026-09-07T06:41:08.300Z"
+  },
+  {
+    "id": "job_337f38f0-efec-4321-9c99-45bd87991b3a",
+    "timeline": {
+      "name": "Untitled Video Project",
+      "aspectRatio": "16:9",
+      "canvas": {
+        "width": 1920,
+        "height": 1080,
+        "fps": 30
+      },
+      "tracks": [
+        {
+          "id": "track_v1",
+          "type": "video",
+          "name": "Video Track 1",
+          "muted": false,
+          "clips": [
+            {
+              "id": "clip_1788763409281_1",
+              "fileId": "file_3aca1508-5f8d-4f55-9b62-f61d143c980e",
+              "name": "hero.mp4",
+              "type": "video",
+              "start": 0,
+              "duration": 3.47,
+              "trimIn": 0,
+              "trimOut": 3.47,
+              "volume": 1,
+              "speed": 1,
+              "filter": "grayscale"
+            },
+            {
+              "id": "clip_1788763409281_2",
+              "fileId": "file_3aca1508-5f8d-4f55-9b62-f61d143c980e",
+              "name": "hero.mp4",
+              "type": "video",
+              "start": 12.2,
+              "duration": 3.6,
+              "trimIn": 3.24,
+              "trimOut": 6.84,
+              "volume": 1,
+              "speed": 1,
+              "filter": "grayscale"
+            },
+            {
+              "id": "clip_1788763441963",
+              "fileId": "file_85022b10-6ea4-4551-b224-c7bea6149683",
+              "name": "money-rainbow-logo-design_474888-2243.avif",
+              "type": "video",
+              "start": 3.47,
+              "duration": 4.13,
+              "trimIn": 0,
+              "trimOut": 4.13,
+              "volume": 1,
+              "speed": 1,
+              "filter": "none"
+            },
+            {
+              "id": "clip_1788763441963",
+              "fileId": "file_85022b10-6ea4-4551-b224-c7bea6149683",
+              "name": "money-rainbow-logo-design_474888-2243.avif",
+              "type": "video",
+              "start": 3.47,
+              "duration": 4.13,
+              "trimIn": 0,
+              "trimOut": 4.13,
+              "volume": 1,
+              "speed": 1,
+              "filter": "none"
+            }
+          ]
+        },
+        {
+          "id": "track_a1",
+          "type": "audio",
+          "name": "Audio Track 1",
+          "muted": false,
+          "clips": []
+        }
+      ],
+      "textOverlays": [],
+      "transitions": []
+    },
+    "status": "completed",
+    "progress": 100,
+    "createdAt": "2026-09-07T06:44:33.469Z",
+    "outputPath": "D:\\pbl\\backend\\exports\\export_job_337f38f0-efec-4321-9c99-45bd87991b3a.mp4",
+    "downloadUrl": "/api/export/job_337f38f0-efec-4321-9c99-45bd87991b3a/download",
+    "completedAt": "2026-09-07T06:44:39.557Z"
+  },
+  {
+    "id": "job_df415db4-1697-42dc-9085-22eb42ef1c7d",
+    "timeline": {
+      "name": "Untitled Video Project",
+      "aspectRatio": "16:9",
+      "canvas": {
+        "width": 854,
+        "height": 480,
+        "fps": 30
+      },
+      "tracks": [
+        {
+          "id": "track_v1",
+          "type": "video",
+          "name": "Video Track 1",
+          "muted": false,
+          "clips": [
+            {
+              "id": "clip_1788763409281_1",
+              "fileId": "file_3aca1508-5f8d-4f55-9b62-f61d143c980e",
+              "name": "hero.mp4",
+              "type": "video",
+              "start": 0,
+              "duration": 3.47,
+              "trimIn": 0,
+              "trimOut": 3.47,
+              "volume": 1,
+              "speed": 1,
+              "filter": "grayscale"
+            },
+            {
+              "id": "clip_1788763409281_2",
+              "fileId": "file_3aca1508-5f8d-4f55-9b62-f61d143c980e",
+              "name": "hero.mp4",
+              "type": "video",
+              "start": 7.6,
+              "duration": 3.6,
+              "trimIn": 3.24,
+              "trimOut": 6.84,
+              "volume": 1,
+              "speed": 1,
+              "filter": "grayscale"
+            },
+            {
+              "id": "clip_1788763441963",
+              "fileId": "file_85022b10-6ea4-4551-b224-c7bea6149683",
+              "name": "money-rainbow-logo-design_474888-2243.avif",
+              "type": "video",
+              "start": 3.47,
+              "duration": 4.13,
+              "trimIn": 0,
+              "trimOut": 4.13,
+              "volume": 1,
+              "speed": 1,
+              "filter": "none"
+            },
+            {
+              "id": "clip_1788763441963",
+              "fileId": "file_85022b10-6ea4-4551-b224-c7bea6149683",
+              "name": "money-rainbow-logo-design_474888-2243.avif",
+              "type": "video",
+              "start": 3.47,
+              "duration": 4.13,
+              "trimIn": 0,
+              "trimOut": 4.13,
+              "volume": 1,
+              "speed": 1,
+              "filter": "none"
+            }
+          ]
+        },
+        {
+          "id": "track_a1",
+          "type": "audio",
+          "name": "Audio Track 1",
+          "muted": false,
+          "clips": []
+        }
+      ],
+      "textOverlays": [],
+      "transitions": []
+    },
+    "status": "completed",
+    "progress": 100,
+    "createdAt": "2026-09-07T06:45:14.836Z",
+    "outputPath": "D:\\pbl\\backend\\exports\\export_job_df415db4-1697-42dc-9085-22eb42ef1c7d.mp4",
+    "downloadUrl": "/api/export/job_df415db4-1697-42dc-9085-22eb42ef1c7d/download",
+    "completedAt": "2026-09-07T06:45:17.762Z"
+  },
+  {
+    "id": "job_7d20aade-b834-49b0-9ad2-c5db6830c744",
+    "timeline": {
+      "name": "Untitled Video Project",
+      "aspectRatio": "16:9",
+      "canvas": {
+        "width": 854,
+        "height": 480,
+        "fps": 30
+      },
+      "tracks": [
+        {
+          "id": "track_v1",
+          "type": "video",
+          "name": "Video Track 1",
+          "muted": false,
+          "clips": [
+            {
+              "id": "clip_1788763890716_1",
+              "fileId": "file_8e19c196-44ce-48c7-83c3-42a94f755284",
+              "name": "hero.mp4",
+              "type": "video",
+              "start": 0,
+              "duration": 2.5,
+              "trimIn": 0,
+              "trimOut": 2.5,
+              "volume": 1,
+              "speed": 1,
+              "filter": "none"
+            },
+            {
+              "id": "clip_1788763894513_2",
+              "fileId": "file_8e19c196-44ce-48c7-83c3-42a94f755284",
+              "name": "hero.mp4",
+              "type": "video",
+              "start": 2.5,
+              "duration": 1.57,
+              "trimIn": 4.43,
+              "trimOut": 6,
+              "volume": 0.95,
+              "speed": 1,
+              "filter": "sepia"
+            },
+            {
+              "id": "clip_1788763894513_1",
+              "fileId": "file_8e19c196-44ce-48c7-83c3-42a94f755284",
+              "name": "hero.mp4",
+              "type": "video",
+              "start": 4.07,
+              "duration": 1.93,
+              "trimIn": 2.5,
+              "trimOut": 4.43,
+              "volume": 1,
+              "speed": 1,
+              "filter": "none"
+            }
+          ]
+        },
+        {
+          "id": "track_a1",
+          "type": "audio",
+          "name": "Audio Track 1",
+          "muted": false,
+          "clips": []
+        }
+      ],
+      "textOverlays": [],
+      "transitions": []
+    },
+    "status": "failed",
+    "progress": 5,
+    "createdAt": "2026-09-07T06:52:06.226Z",
+    "error": "FFmpeg rendering failed: ffmpeg exited with code 4294967274: Failed to set value 'color=c=black:s=854x480:r=30:d=6.00[bg_base];[0:v]trim=start=0.00:end=2.50,setpts=PTS-STARTPTS,scale=854:480:force_original_aspect_ratio=decrease,pad=854:480:(ow-iw)/2:(oh-ih)/2,fps=30,format=yuv420p[vprep_0];[bg_base][vprep_0]overlay=x=0:y=0:enable='between(t,0.00,2.50)':eof_action=pass[canvas_0];[1:v]trim=start=4.43:end=6.00,setpts=PTS-STARTPTS,scale=854:480:force_original_aspect_ratio=decrease,pad=854:480:(ow-iw)/2:(oh-ih)/2,fps=30,format=yuv420p,colorchannelscaler=0.393:0.769:0.189:0:0.349:0.686:0.168:0:0.272:0.534:0.131:0[vprep_1];[canvas_0][vprep_1]overlay=x=0:y=0:enable='between(t,2.50,4.07)':eof_action=pass[canvas_1];[2:v]trim=start=2.50:end=4.43,setpts=PTS-STARTPTS,scale=854:480:force_original_aspect_ratio=decrease,pad=854:480:(ow-iw)/2:(oh-ih)/2,fps=30,format=yuv420p[vprep_2];[canvas_1][vprep_2]overlay=x=0:y=0:enable='between(t,4.07,6.00)':eof_action=pass[canvas_2]' for option 'filter_complex': Invalid argument\nError parsing global options: Invalid argument\n"
+  },
+  {
+    "id": "job_e88b6f36-d8fa-4775-9e74-0b0c5e10dcfc",
+    "timeline": {
+      "name": "Untitled Video Project",
+      "aspectRatio": "16:9",
+      "canvas": {
+        "width": 854,
+        "height": 480,
+        "fps": 30
+      },
+      "tracks": [
+        {
+          "id": "track_v1",
+          "type": "video",
+          "name": "Video Track 1",
+          "muted": false,
+          "clips": [
+            {
+              "id": "clip_1788763890716_1",
+              "fileId": "file_8e19c196-44ce-48c7-83c3-42a94f755284",
+              "name": "hero.mp4",
+              "type": "video",
+              "start": 0,
+              "duration": 2.5,
+              "trimIn": 0,
+              "trimOut": 2.5,
+              "volume": 1,
+              "speed": 1,
+              "filter": "none"
+            },
+            {
+              "id": "clip_1788763894513_2",
+              "fileId": "file_8e19c196-44ce-48c7-83c3-42a94f755284",
+              "name": "hero.mp4",
+              "type": "video",
+              "start": 2.5,
+              "duration": 1.57,
+              "trimIn": 4.43,
+              "trimOut": 6,
+              "volume": 0.95,
+              "speed": 1,
+              "filter": "sepia"
+            },
+            {
+              "id": "clip_1788763894513_1",
+              "fileId": "file_8e19c196-44ce-48c7-83c3-42a94f755284",
+              "name": "hero.mp4",
+              "type": "video",
+              "start": 4.07,
+              "duration": 1.93,
+              "trimIn": 2.5,
+              "trimOut": 4.43,
+              "volume": 1,
+              "speed": 1,
+              "filter": "none"
+            }
+          ]
+        },
+        {
+          "id": "track_a1",
+          "type": "audio",
+          "name": "Audio Track 1",
+          "muted": false,
+          "clips": []
+        }
+      ],
+      "textOverlays": [],
+      "transitions": []
+    },
+    "status": "failed",
+    "progress": 5,
+    "createdAt": "2026-09-07T06:52:18.422Z",
+    "error": "FFmpeg rendering failed: ffmpeg exited with code 4294967274: Failed to set value 'color=c=black:s=854x480:r=30:d=6.00[bg_base];[0:v]trim=start=0.00:end=2.50,setpts=PTS-STARTPTS,scale=854:480:force_original_aspect_ratio=decrease,pad=854:480:(ow-iw)/2:(oh-ih)/2,fps=30,format=yuv420p[vprep_0];[bg_base][vprep_0]overlay=x=0:y=0:enable='between(t,0.00,2.50)':eof_action=pass[canvas_0];[1:v]trim=start=4.43:end=6.00,setpts=PTS-STARTPTS,scale=854:480:force_original_aspect_ratio=decrease,pad=854:480:(ow-iw)/2:(oh-ih)/2,fps=30,format=yuv420p,colorchannelscaler=0.393:0.769:0.189:0:0.349:0.686:0.168:0:0.272:0.534:0.131:0[vprep_1];[canvas_0][vprep_1]overlay=x=0:y=0:enable='between(t,2.50,4.07)':eof_action=pass[canvas_1];[2:v]trim=start=2.50:end=4.43,setpts=PTS-STARTPTS,scale=854:480:force_original_aspect_ratio=decrease,pad=854:480:(ow-iw)/2:(oh-ih)/2,fps=30,format=yuv420p[vprep_2];[canvas_1][vprep_2]overlay=x=0:y=0:enable='between(t,4.07,6.00)':eof_action=pass[canvas_2]' for option 'filter_complex': Invalid argument\nError parsing global options: Invalid argument\n"
   }
 ]

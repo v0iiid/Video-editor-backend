@@ -5,6 +5,7 @@ import fs from 'fs';
 import dotenv from 'dotenv';
 import apiRouter from './routes/api';
 import { initCleanupWorker } from './services/cleanupService';
+import { dbService } from './services/dbService';
 
 dotenv.config();
 
@@ -41,11 +42,17 @@ app.use('/api', apiRouter);
 // Start Background Cleanup Task
 initCleanupWorker(parseInt(process.env.CLEANUP_INTERVAL_MINUTES || '60'));
 
-app.listen(PORT, () => {
+// Connect MongoDB & Start Server
+const mongoUri = process.env.MONGODB_URI || 'mongodb+srv://shubham:shubham@cluster0.ighcgkv.mongodb.net/?appName=Cluster0';
+
+app.listen(PORT, async () => {
   console.log(`=======================================================`);
   console.log(`  🚀 Video Editor Backend Server is running!`);
   console.log(`  📡 API Endpoint: http://localhost:${PORT}/api`);
   console.log(`  📁 Uploads Dir: ${path.resolve(UPLOAD_DIR)}`);
   console.log(`  📁 Exports Dir: ${path.resolve(EXPORT_DIR)}`);
+
+  // Attempt MongoDB Connection
+  await dbService.connectMongo(mongoUri);
   console.log(`=======================================================`);
 });

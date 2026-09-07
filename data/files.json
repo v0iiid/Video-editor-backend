@@ -45,5 +45,37 @@
     "resolution": "740x740",
     "hasAudio": false,
     "createdAt": "2026-09-07T06:22:37.794Z"
+  },
+  {
+    "id": "file_172d9fe2-9223-4f27-b88b-fce1bb8fb958",
+    "originalName": "Lesson 01.mp4",
+    "filename": "1788763877036_d49a4a8d.mp4",
+    "path": "D:\\pbl\\backend\\uploads\\1788763877036_d49a4a8d.mp4",
+    "mimeType": "video/mp4",
+    "size": 84502436,
+    "duration": 1980.245,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "resolution": "1920x1080",
+    "hasAudio": true,
+    "thumbnailPath": "D:\\pbl\\backend\\uploads\\thumb_file_172d9fe2-9223-4f27-b88b-fce1bb8fb958.jpg",
+    "createdAt": "2026-09-07T06:51:19.288Z"
+  },
+  {
+    "id": "file_8e19c196-44ce-48c7-83c3-42a94f755284",
+    "originalName": "hero.mp4",
+    "filename": "1788763880389_229f9f0f.mp4",
+    "path": "D:\\pbl\\backend\\uploads\\1788763880389_229f9f0f.mp4",
+    "mimeType": "video/mp4",
+    "size": 2238141,
+    "duration": 6,
+    "width": 2880,
+    "height": 1178,
+    "fps": 30,
+    "resolution": "2880x1178",
+    "hasAudio": false,
+    "thumbnailPath": "D:\\pbl\\backend\\uploads\\thumb_file_8e19c196-44ce-48c7-83c3-42a94f755284.jpg",
+    "createdAt": "2026-09-07T06:51:21.474Z"
   }
 ]

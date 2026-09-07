@@ -1,10 +1,10 @@
 import { Request, Response } from 'express';
 import { v4 as uuidv4 } from 'uuid';
 import { dbService } from '../services/dbService';
-import { ProjectRecord, TimelineSchema } from '../types';
+import { ProjectRecord } from '../types';
 
 export const projectController = {
-  saveProject(req: Request, res: Response) {
+  async saveProject(req: Request, res: Response) {
     try {
       const { id, name, timeline } = req.body;
 
@@ -15,7 +15,7 @@ export const projectController = {
       const projectId = id || `proj_${uuidv4()}`;
       const now = new Date().toISOString();
 
-      const existing = dbService.getProject(projectId);
+      const existing = await dbService.getProject(projectId);
       const project: ProjectRecord = {
         id: projectId,
         name: name,
@@ -28,7 +28,7 @@ export const projectController = {
         }
       };
 
-      dbService.saveProject(project);
+      await dbService.saveProject(project);
 
       return res.status(200).json({
         message: 'Project saved successfully',
@@ -40,14 +40,14 @@ export const projectController = {
     }
   },
 
-  getAllProjects(req: Request, res: Response) {
-    const projects = dbService.getAllProjects();
+  async getAllProjects(req: Request, res: Response) {
+    const projects = await dbService.getAllProjects();
     return res.json({ projects });
   },
 
-  getProjectById(req: Request, res: Response) {
+  async getProjectById(req: Request, res: Response) {
     const projectId = req.params.id;
-    const project = dbService.getProject(projectId);
+    const project = await dbService.getProject(projectId);
 
     if (!project) {
       return res.status(404).json({ error: 'Project not found' });
@@ -56,15 +56,15 @@ export const projectController = {
     return res.json({ project });
   },
 
-  deleteProject(req: Request, res: Response) {
+  async deleteProject(req: Request, res: Response) {
     const projectId = req.params.id;
-    const project = dbService.getProject(projectId);
+    const project = await dbService.getProject(projectId);
 
     if (!project) {
       return res.status(404).json({ error: 'Project not found' });
     }
 
-    dbService.deleteProject(projectId);
+    await dbService.deleteProject(projectId);
     return res.json({ message: 'Project deleted successfully' });
   }
 };

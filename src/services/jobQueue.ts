@@ -1,6 +1,6 @@
 import path from 'path';
 import { v4 as uuidv4 } from 'uuid';
-import { ExportJob, TimelineSchema } from '../types';
+import { ExportJob, TimelineSchema, MediaFileMetadata } from '../types';
 import { dbService } from './dbService';
 import { ffmpegService } from './ffmpegService';
 
@@ -18,7 +18,6 @@ export const jobQueue = {
     };
     dbService.saveJob(job);
 
-    // Process job asynchronously in background
     setImmediate(() => {
       this.processJob(id);
     });
@@ -38,9 +37,14 @@ export const jobQueue = {
       const outputFilename = `export_${jobId}.mp4`;
       const outputPath = path.join(EXPORT_DIR, outputFilename);
 
+      // Pre-fetch media files mapping for async render
+      const allFiles = await dbService.getAllMediaFiles();
+      const fileMap = new Map<string, MediaFileMetadata>();
+      allFiles.forEach(f => fileMap.set(f.id, f));
+
       await ffmpegService.renderTimeline(
         job.timeline,
-        (fileId) => dbService.getMediaFile(fileId),
+        (fileId) => fileMap.get(fileId),
         outputPath,
         (percent) => {
           const currentJob = dbService.getJob(jobId);
